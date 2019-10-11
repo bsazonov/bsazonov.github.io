@@ -1,0 +1,43 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.5">
+  <title>Autofill Smoke Test</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    var NPFillFormSimpsons = function() {
+      var form = document.forms['np1'];
+      form['username'].value = 'Homer_Simpson';
+      form['password'].value = 'DOH!';
+    }
+    var NPFillFormSuperman = function() {
+	    var form = document.forms['np1'];
+	    form['username'].value = 'Superman';
+	    form['password'].value = 'LouisLane';
+    }
+    var NPFillFormPresident = function() {
+	    var form = document.forms['np1'];
+      form['username'].value = 'Barackalypse';
+      form['password'].value = 'ILoveGeorgeBush';
+    }
+  </script>
+</head>
+<body>
+<em>Beware what you post, all the forms send data to https://example.com.</em>
+This page is based on https://rsolomakhin.github.io.
+<br><br>
+
+<h3>Username/Password</h3>
+
+<form name="np" id="np1" action="https://example.com/" method="post">
+  Username: <input type="text" name="username" id="password_name"><br>
+  Password: <input type="password" name="password" id="password_field"><br>
+  <input type="reset" value="Reset">
+  <input type="submit" value="Submit" id="password_submit">
+</form>  
+<p>
+<button type="button" onclick="NPFillFormSimpsons()">NP Fill Form (Simpsons)</button>
+<br>
+<button type="button" onclick="NPFillFormSuperman()">NP Fill Form (Superman)</button>
+<br>
+<button type="button" onclick="NPFillFormPresident()">NP Fill Form (President)</button>
+<br>
+</body></html>
